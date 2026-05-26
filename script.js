@@ -37,31 +37,52 @@ function rollDice() {
   let total = 0;
   let results = [];
 
+  // Real result
+
   for (let i = 0; i < amount; i++) {
     const roll = Math.floor(Math.random() * sides) + 1;
     total += roll;
     results.push(roll);
   }
 
-  // Build and push history entry
-  const historyEntry = `${amount} x D${sides} (${results.join(`, `)}) = ${total}`;
-  rollHistory.push(total);
+  document.getElementById(`dice-roller`).disabled = true;
+  document.getElementById(`individual-rolls`).textContent = ``;
 
-  // Create and append list item
-  const listItem = document.createElement("li");
-  listItem.textContent = historyEntry;
-  rollHistoryList.appendChild(listItem);
+  // Animation
+  const interval = setInterval(() => {
+    const fakeRoll = Math.floor(Math.random() * (sides * amount)) + amount;
 
-  //   Display total
-  document.getElementById(`result-total`).textContent = `You rolled: ${total}`;
+    document.getElementById(`result-total`).textContent =
+      `You rolled: ${fakeRoll} 🎲`;
+  }, 100);
 
-  //   Display indivudual rolls
-  document.getElementById(`individual-rolls`).textContent =
-    `Individual results: ${results.join(`, `)}`;
+  // Stop animation after 1 second
+  setTimeout(() => {
+    clearInterval(interval);
+
+    document.getElementById(`dice-roller`).disabled = false;
+
+    // Display REAL result
+    document.getElementById(`result-total`).textContent =
+      `You rolled: ${total} 🎲`;
+
+    document.getElementById(`individual-rolls`).textContent =
+      `Individual results: ${results.join(`, `)} 🎲`;
+
+    const historyEntry = `${amount} x D${sides} (${results.join(`, `)}) = ${total} 🎲`;
+    rollHistory.push(historyEntry);
+
+    // Create and append list item
+    const listItem = document.createElement("li");
+    listItem.textContent = historyEntry;
+    rollHistoryList.appendChild(listItem);
+  }, 1000);
 
   // Min/Max Result
   document.getElementById(`min-roll`).textContent = `Minimum roll: ${minimum}`;
   document.getElementById(`max-roll`).textContent = `Maximum roll: ${maximum}`;
+
+  // Build and push history entry
 }
 
 // Roll dice error
