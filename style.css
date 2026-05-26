@@ -1,0 +1,95 @@
+/* CSS Variables */
+
+:root {
+  /* Colors */
+  --primary-color: rgb(36, 7, 54);
+  --secondary-color: rgb(53, 12, 70);
+  --bg-color: rgb(0, 0, 0);
+  --text-color: whitesmoke;
+  --container-color: rgb(31, 20, 63);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+header h1 {
+  padding: 40px 20px;
+}
+
+section {
+  /* background-color: var(--container-color); */
+  padding: 40px 20px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 10%;
+  margin-top: 20px;
+}
+
+select {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.container {
+  background-color: var(--primary-color);
+  padding: 40px;
+  width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.dice-roller {
+  position: relative;
+}
+
+.roll-results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dice-selector {
+  margin-top: 10px;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+li {
+  margin-top: 10px;
+  list-style: none;
+}

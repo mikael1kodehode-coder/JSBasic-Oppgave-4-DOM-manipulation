@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Uten's Dice Roller</h1>
+    </header>
+
+    <main>
+      <section>
+        <div class="container dice-roller">
+          <h3>Choose your Dice Type</h3>
+          <div class="dice-selector">
+            <select name="dice-type" id="dice-type">
+              <option value="" disabled selected hidden>Choose Type</option>
+            </select>
+          </div>
+          <div class="dice-number">
+            <h3>Select amount of Dice to throw</h3>
+            <select name="dice-number" id="dice-number">
+              <option value="" disabled selected hidden>Choose amount</option>
+            </select>
+          </div>
+
+          <div class="dice-button">
+            <button id="dice-roller">Roll Dice!</button>
+            <button id="clear-button" onclick="clearResults()">
+              Reset Result
+            </button>
+            <button id="clear-history" onclick="clearHistory()">
+              Clear History!
+            </button>
+          </div>
+        </div>
+
+        <div class="container roll-results">
+          <div class="dice-results">
+            <h3>Results:</h3>
+            <div class="dice-total">
+              <p>Total:</p>
+              <div id="result-total"></div>
+              <div id="individual-rolls"></div>
+            </div>
+            <div class="min-max">
+              <p>Min/Max:</p>
+              <div id="min-roll"></div>
+              <div id="max-roll"></div>
+            </div>
+          </div>
+          <div class="roll-history">
+            <h3>Roll History:</h3>
+            <div id="dice-roll-history"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
