@@ -49,6 +49,8 @@ function rollDice() {
   document.getElementById(`individual-rolls`).textContent = ``;
 
   // Animation
+
+  playRollSound(); // plays dice rolling audio on animation start
   const interval = setInterval(() => {
     const fakeRoll = Math.floor(Math.random() * (sides * amount)) + amount;
 
@@ -83,6 +85,15 @@ function rollDice() {
   document.getElementById(`max-roll`).textContent = `Maximum roll: ${maximum}`;
 
   // Build and push history entry
+}
+
+// Dice roll audio
+
+const rollSound = new Audio("./media/dice-roll.mp3");
+
+function playRollSound() {
+  rollSound.currentTime = 0; // restart if already playing
+  rollSound.play();
 }
 
 // Roll dice error
