@@ -134,3 +134,7 @@ h2,
 h3 {
   color: var(--accent-color);
 }
+
+li {
+  list-style: none;
+}
