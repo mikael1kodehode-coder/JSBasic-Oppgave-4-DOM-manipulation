@@ -7,7 +7,7 @@
   --bg-color: #130e07;
   --container-color: rgba(44, 26, 15, 0.9);
 
-  --text-color: #f5f1e8;
+  --text-color: #d4af37;
 
   --border-color: rgba(212, 175, 55, 0.35);
 
@@ -103,9 +103,9 @@ button {
 button:hover {
   transform: scale(1.03);
 
-  color: white;
+  color: var(--bg-color);
 
-  background: linear-gradient(to bottom, #3a2311, #6d4921);
+  background: linear-gradient(to bottom, #d4af37, #f0cf67);
 
   box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
 }
@@ -123,16 +123,16 @@ select {
 
   border: 1px solid var(--border-color);
 
-  background-color: #3a2311;
+  background: linear-gradient(to bottom, #d4af37, #f0cf67);
 
-  color: var(--text-color);
+  color: var(--bg-color);
 
   font-size: 1rem;
 }
 
-h2,
-h3 {
-  color: var(--accent-color);
+option {
+  background-color: #f0cf67;
+  color: var(--bg-color);
 }
 
 li {
